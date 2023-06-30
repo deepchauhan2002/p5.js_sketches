@@ -12,11 +12,9 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   background(255); // Set background color to white
-
+  
   // Register mouse click event
   canvas.addEventListener('click', toggleAudio);
-
-  frameRate(10); // Set a lower frame rate to reduce the speed of generating figures
 }
 
 function draw() {
@@ -28,11 +26,11 @@ function draw() {
     // Use the audio level to control the randomness of graphic features
     let randomness = map(level, 0, 1, 0, 1);
 
-    for (let i = 0; i < 10; i++) {
-      // Generate random colors with enhanced variations
-      let r = random(255 * randomness, 255);
-      let g = random(255 * randomness, 255);
-      let b = random(255 * randomness, 255);
+    for (let i = 0; i < 200; i++) {
+      // Generate random colors with audio influence
+      let r = random(255) * randomness;
+      let g = random(255) * randomness;
+      let b = random(255) * randomness;
       let alpha = random(50, 200);
 
       // Set the fill color
